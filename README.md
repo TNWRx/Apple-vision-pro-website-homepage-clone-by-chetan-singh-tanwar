@@ -1,4 +1,4 @@
-## ⚠️CAUTION : NOT USABLE ON MOBILE DEVICES ⚠️
+## ⚠️WARNING : NOT USABLE ON MOBILE DEVICES ⚠️
 # Apple-vision-pro-website-homepage-clone-by-chetan-singh-tanwar
 
 # Apple Vision Pro Homepage Clone
