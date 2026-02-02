@@ -1,9 +1,8 @@
+
 *{
     margin: 0%;
     padding: 0%;
-    box-sizing: border-box;
     font-family: 'SF Pro Display', sans-serif;
-    overflow: hidden;
 }
 html,
 body {
@@ -13,6 +12,8 @@ body {
 #main{
     position: relative;
     overflow: hidden;
+    z-index: 8;
+    background-color: transparent;
 }
 #page{
     position:relative;
@@ -37,6 +38,7 @@ body {
     padding: 7px 20px;
     border-radius: 50px;
     border: none;
+    
 }
 #page>nav>h3{
     font-weight: 400;
@@ -344,7 +346,7 @@ body {
     position: relative;
     max-width: 100vw;
     max-height: 100vh;
-    z-index: 100;
+    z-index: 9;
     overflow: visible;
 
 }
@@ -596,7 +598,7 @@ body {
 #page20>canvas{
     position: relative;
     max-width: 100vw;
-    max-height: 100vw;
+    max-height: 100vh;
 }
 #page21{
     display: flex;
@@ -957,3 +959,64 @@ body {
     padding: 10px 20px;
     position: absolute;
 }
+/* Fix for white lines appearing between sections during scrolling */
+/* Apply negative margin to all pages to eliminate sub-pixel rendering gaps */
+#page, #page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8, #page9, 
+#page10, #page11, #page12, #page13, #page14, #page15, #page16, #page17, #page18, 
+#page19, #page20, #page21, #page22, #page23, #page24, #page25, #page26, #page27, 
+#page28, #page29, #page30, .overlay {
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+
+/* Ensure first page doesn't have negative margin */
+#page {
+    margin-top: 0;
+}
+
+
+/* Desktop Only Message for Mobile Devices */
+#desktop-only-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktop-only-content {
+    text-align: center;
+    padding: 40px;
+    color: white;
+    max-width: 500px;
+}
+
+.desktop-only-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.desktop-only-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 15px 0;
+    opacity: 0.9;
+}
+
+/* Show message only on mobile/tablet devices */
+@media (max-width: 1024px) {
+    #desktop-only-message {
+        display: flex !important;
+    }
+    
+    #main {
+        display: none !important;
+    }
+}
+
